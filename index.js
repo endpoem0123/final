@@ -32,13 +32,14 @@ $(".v_cond-input").on('change', function () {
     }
 })
 
+//選擇遊戲模式 另外localstorage寫在html中
 function game() {
     var form = document.getElementById("Gmode");
     var gamemode = form.mode.value;
     localStorage.setItem("game mode", gamemode);
     var v = document.getElementsByClassName("v_cond-input box")[0].value;
     localStorage.setItem("v_cond", v);
-    // console.log(gamemode);
+
     if (gamemode == "classical 3X3") {
         location.href = "./game3.html"
 
@@ -46,10 +47,3 @@ function game() {
         location.href = "./game4.html"
     }
 }
-
-// 開始遊戲
-// $(".game").submit(function (event) {
-
-//     event.preventDefault();
-//     window.location.href = "./game.html"
-// })

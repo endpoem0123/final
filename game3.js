@@ -5,9 +5,9 @@ var Xwc = 0;
 
 $().ready(function () {
     gamemode = localStorage.getItem("game mode");
-    alert("現在遊戲模式：" + gamemode);
     v_cond = localStorage.getItem("v_cond");
-    alert("先將" + v_cond + '個連一線者勝利');
+    alert("現在遊戲模式：" + gamemode + "\n先將" + v_cond + '個連一線者勝利');
+
 })
 
 function playRound(objDest) {
@@ -53,6 +53,7 @@ function playRound(objDest) {
     } else {
         alert("方塊已經被佔用了!");
     }
+    //使用setTimeout是為了讓OX先顯現再判定勝負
     setTimeout(function () {
         if (checkRow()) {
             if (turn == 0) {
@@ -123,6 +124,7 @@ function tableIsFull() {
     return true;
 }
 
+//比較三個物件是否相同 但要排除空白
 function compare(obj0, obj1, obj2) {
     if (
         obj0.getElementsByClassName('state')[0].innerText != 0 &&

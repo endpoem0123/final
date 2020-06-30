@@ -1,5 +1,4 @@
 body {
-    /* background: linear-gradient(rgb(54, 49, 176), rgb(14, 16, 62)); */
     min-height: 100vh;
     margin: 0;
     padding: 0;
@@ -28,7 +27,7 @@ body {
     transform: translate(-50%, 0);
     margin: 0 auto;
     color: #fff;
-    font-size: 4em;
+    font-size: 3.5em;
     font-weight: 900;
     letter-spacing: 10px;
 
@@ -38,9 +37,7 @@ body {
 .box {
     border-bottom: 2px solid #fff;
     height: 70px;
-    /* width: 100%; */
-    border-radius: 1vw 0 0;
-    /* border: 1px solid #fff; */
+    /* border-radius: 1vw 0 0; */
     margin: 15px 0;
     padding: 30px 20px 10px;
     background: rgba(0, 0, 0, .39);
@@ -102,7 +99,7 @@ select option {
     margin-top: 15px;
     padding: 0;
     border: 0;
-    color: linear-gradient(rgb(54, 49, 176), rgb(14, 16, 62));
+    /* color: linear-gradient(rgb(54, 49, 176), rgb(14, 16, 62)); */
     font-weight: 700;
     font-size: 20px;
     letter-spacing: 10px;
@@ -130,10 +127,8 @@ select option {
 
 .box:focus,
 .box:active {
-    /* transition: all .2s ease-in-out;
-    -webkit-transition: all .2s ease-in-out; */
+
     border-bottom: 2px solid rgb(112, 199, 243);
-    /* opacity: 1; */
 }
 
 
