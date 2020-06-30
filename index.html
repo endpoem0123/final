@@ -49,7 +49,7 @@
             </div>
             <div class="stbutton">
                 <!-- <a href="https://yichiehliu.github.io/final/game" class="game-link"> -->
-                <button class="start" onclick="Lstore()" onclick="game()">Continue</button>
+                <button class="start" onclick="Lstore()">Continue</button>
             </div>
         </form>
 
@@ -77,5 +77,12 @@
         var v = document.getElementsByClassName("v_cond-input box")[0].value;
         localStorage.setItem("v_cond", v)
         alert(v);
+
+        if (gamemode == "classical 3X3") {
+            location.href = "./game3.html"
+
+        } else if (gamemode == "classical 4X4") {
+            location.href = "./game4.html"
+        }
     }
 </script>
