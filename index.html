@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+    <title>Setup</title>
+</head>
+
+<body>
+    <div class="header">
+        <span>TIC-TAC-TOE</span>
+    </div>
+    <div class="content">
+
+        <form id="Gmode" action="" class="game">
+            <div class="diff set-div">
+                <label id="Difficulty">
+                    <span class="form-span">Game mode</span>
+                    <select name="mode" class="Difficulty box" required="">
+                        <option value="classical 3X3">classical 3X3</option>
+                        <option value="classical 4X4">classical 4X4</option>
+                    </select>
+                </label>
+            </div>
+            <div class="wandh">
+
+                <div class="width set-div">
+                    <label id="width">
+                        <span class="form-span">Row</span>
+                        <input class="row-input box" type="number" pattern="[0-9]*" value="3" readonly="readonly">
+                    </label>
+                </div>
+                <div class="height set-div">
+                    <label id="height">
+                        <span class="form-span">column</span>
+                        <input class="column-input box" type="number" pattern="[0-9]*" value="3" readonly="readonly">
+                    </label>
+                </div>
+            </div>
+
+            <div class="v_cond set-div">
+                <label id="v_cond">
+                    <span class="form-span">Victory condition</span>
+                    <input class="v_cond-input box" type="number" pattern="[0-9]*" value="3">
+                </label>
+            </div>
+            <div class="stbutton">
+                <!-- <a href="https://yichiehliu.github.io/final/game" class="game-link"> -->
+                <button class="start" onclick="Lstore()" onclick="game()">Continue</button>
+            </div>
+        </form>
+
+    </div>
+
+    <div class="footer">
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+
+</html>
+
+<script>
+    function Lstore() {
+        var form = document.getElementById("Gmode");
+        var gamemode = form.mode.value;
+        console.log(gamemode);
+        localStorage.setItem("game mode", gamemode);
+        alert(gamemode);
+        var v = document.getElementsByClassName("v_cond-input box")[0].value;
+        localStorage.setItem("v_cond", v)
+        alert(v);
+    }
+</script>

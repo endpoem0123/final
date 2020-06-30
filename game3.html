@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="game3.css">
+    <title>Tic-Tac-Toe</title>
+</head>
+
+<body>
+    <div class="header">
+        <button class="ppage" onclick="prepage()">
+            <img src="./img/ppage.png" alt="previous Webpage" width="30px">
+        </button>
+        <div class="title">Tic-Tac-Toe</div>
+
+    </div>
+    <div class="line">
+    </div>
+
+    <div class="content">
+        <div class="tb-content">
+            <div id='grid'>
+                <div class="turns">
+                    <h2>turns：</h2>
+                    <img src="./img/TO.png" alt="turns：O" class="tpic">
+                </div>
+                <table id="grid" border="1" style="border-collapse: collapse; width: 600px; height: 600px;"
+                    bordercolor="#000000">
+                    <tr>
+                        <td width="200" align="center" id="ttt00" onClick="playRound(this);">
+                            <div class="state">0</div>
+                            <img src="./img/E.png" alt="E" class="pic">
+                        </td>
+                        <td width="200" align="center" id="ttt01" onClick="playRound(this);">
+                            <div class="state">0</div>
+                            <img src="./img/E.png" alt="E" class="pic">
+                        </td>
+                        <td width="200" align="center" id="ttt02" onClick="playRound(this);">
+                            <div class="state">0</div>
+                            <img src="./img/E.png" alt="E" class="pic">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td width="200" align="center" id="ttt10" onClick="playRound(this);">
+                            <div class="state">0</div>
+                            <img src="./img/E.png" alt="E" class="pic">
+                        </td>
+                        <td width="200" align="center" id="ttt11" onClick="playRound(this);">
+                            <div class="state">0</div>
+                            <img src="./img/E.png" alt="E" class="pic">
+                        </td>
+                        <td width="200" align="center" id="ttt12" onClick="playRound(this);">
+                            <div class="state">0</div>
+                            <img src="./img/E.png" alt="E" class="pic">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td width="200" align="center" id="ttt20" onClick="playRound(this);">
+                            <div class="state">0</div>
+                            <img src="./img/E.png" alt="E" class="pic">
+                        </td>
+                        <td width="200" align="center" id="ttt21" onClick="playRound(this);">
+                            <div class="state">0</div>
+                            <img src="./img/E.png" alt="E" class="pic">
+                        </td>
+                        <td width="200" align="center" id="ttt22" onClick="playRound(this);">
+                            <div class="state">0</div>
+                            <img src="./img/E.png" alt="E" class="pic">
+                        </td>
+                    </tr>
+                </table>
+                <div class="board">
+                    <div class="counterO">
+                        <div class="Opic"></div>
+                        <div class="Owc">
+                            playerI：0
+                        </div>
+                    </div>
+
+                    <div class="counterX">
+                        <div class="Xpic"></div>
+                        <div class="Xwc">
+                            playerII：0
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</body>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="game3.js"></script>
+
+</html>
