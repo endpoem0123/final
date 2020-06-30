@@ -4,8 +4,10 @@ var Xwc = 0;
 
 
 $().ready(function () {
-    var gamemode = localStorage.getItem("game mode");
-    alert(gamemode);
+    gamemode = localStorage.getItem("game mode");
+    alert("現在遊戲模式：" + gamemode);
+    v_cond = localStorage.getItem("v_cond");
+    alert("先將" + v_cond + '個連一線者勝利');
 })
 
 function playRound(objDest) {
