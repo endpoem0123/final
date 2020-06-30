@@ -53,30 +53,26 @@ function playRound(objDest) {
         alert("方塊已經被佔用了!");
     }
 
-    if (checkRow()) {
-        if (turn == 0) {
-            setTimeout(alert("playerII Win！"), 5000);
-
+    setTimeout(function () {
+        if (checkRow()) {
+            if (turn == 0) {
+                alert("playerII Win！");
+                clearTable();
+                Xwc += 1;
+                var grade = document.getElementsByClassName('Xwc')[0];
+                grade.innerText = "playerII：" + Xwc;
+            } else if (turn == 1) {
+                alert("playerI Win！");
+                clearTable();
+                Owc += 1;
+                var grade = document.getElementsByClassName('Owc')[0];
+                grade.innerText = "playerI：" + Owc;
+            }
+        } else if (tableIsFull()) {
+            confirm("平手！！");
             clearTable();
-            Xwc += 1;
-            console.log(document.getElementsByClassName('Xwc')[0]);
-            var grade = document.getElementsByClassName('Xwc')[0];
-            grade.innerText = "playerII：" + Xwc;
-        } else if (turn == 1) {
-            setTimeout(alert("playerI Win！"), 5000);
-
-            clearTable();
-            Owc += 1;
-            console.log(document.getElementsByClassName('Owc')[0]);
-            var grade = document.getElementsByClassName('Owc')[0];
-            grade.innerText = "playerI：" + Owc;
-
-
         }
-    } else if (tableIsFull()) {
-        setTimeout(alert("平手"), 5000);
-        clearTable();
-    }
+    }, 1);
 
 }
 

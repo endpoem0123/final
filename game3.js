@@ -12,21 +12,22 @@ $().ready(function () {
 
 function playRound(objDest) {
     if (objDest.getElementsByClassName('state')[0].innerText == 0 && turn == 0) {
+        //把空白圖片Eimg換成Oimg
         var Eimg = objDest.getElementsByClassName('pic')[0];
         var Oimg = document.createElement("img");
         Oimg.setAttribute('src', './img/O.png');
         Oimg.setAttribute('alt', 'O');
         Oimg.setAttribute('class', 'pic');
+        //修改table的值用來勝負判斷
         var TargetDiv = objDest.getElementsByClassName('state')[0];
         TargetDiv.innerText = 'O';
         objDest.replaceChild(Oimg, Eimg);
         turn = 1;
-
+        //把turns的圖片換掉
         var TXimg = document.createElement("img");
         TXimg.setAttribute('src', './img/TX.png');
         TXimg.setAttribute('alt', 'turns：X');
         TXimg.setAttribute('class', 'tpic');
-
         var TOimg = document.getElementsByClassName('tpic')[0];
         document.getElementsByClassName("turns")[0].replaceChild(TXimg, TOimg);
 
@@ -50,28 +51,30 @@ function playRound(objDest) {
         var TXimg = document.getElementsByClassName('tpic')[0];
         document.getElementsByClassName("turns")[0].replaceChild(TOimg, TXimg);
     } else {
-        confirm("方塊已經被佔用了!");
+        alert("方塊已經被佔用了!");
     }
-
-    if (checkRow()) {
-        if (turn == 0) {
-            alert("playerII Win！");
+    setTimeout(function () {
+        if (checkRow()) {
+            if (turn == 0) {
+                alert("playerII Win！");
+                clearTable();
+                Xwc += 1;
+                var grade = document.getElementsByClassName('Xwc')[0];
+                grade.innerText = "playerII：" + Xwc;
+            } else if (turn == 1) {
+                alert("playerI Win！");
+                clearTable();
+                Owc += 1;
+                var grade = document.getElementsByClassName('Owc')[0];
+                grade.innerText = "playerI：" + Owc;
+            }
+        } else if (tableIsFull()) {
+            confirm("平手！！");
             clearTable();
-            Xwc += 1;
-            var grade = document.getElementsByClassName('Xwc')[0];
-            grade.innerText = "playerII：" + Xwc;
-        } else if (turn == 1) {
-            alert("playerI Win！");
-            clearTable();
-            Owc += 1;
-            var grade = document.getElementsByClassName('Owc')[0];
-            grade.innerText = "playerI：" + Owc;
         }
-    } else if (tableIsFull()) {
-        confirm("平手！！");
-        clearTable();
-    }
+    }, 1);
 }
+
 
 function clearTable() {
     for (i = 0; i <= 2; i++)
